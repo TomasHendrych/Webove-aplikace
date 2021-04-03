@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <title>Webové aplikace</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+  <body>
+      <header class="jumbotron bg-success">
+        <div class="container-fluid">
+            <h1 id="center">Webové aplikace</h1>
+          </div>
+      </header>
+      <main class="container">
+        <div class="row">tady bude klikacka</div>
+
+        <br>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10" class="justify">
+                Webová aplikace je aplikace poskytovaná uživatelům z webového serveru 
+                přes internet nebo jinou vnitropodnikovou sít’ (intranet). Díky pokročilým webovým 
+                technologiím je možné realizovat webovým prostředím stále složitější a 
+                komplexnější aplikace, včetně informačních systémů, cloudových služeb apod.
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <h4>Vícevrstvé webové aplikace a MVC</h4>
+        </div>
+        <div class="row">   
+            <div class="col-sm-6">
+                <p>Současné webové aplikace jsou strukturovány do více vrstev, nejčastěji využívají rozdělení na tři vrstvy: </p>
+                <ol>
+                    <li><b>Prezentační vrstva</b></li>
+                        <ul>
+                            <li>Plní zpravidla webový prohlížeč</li>
+                        </ul>
+                    <li><b>Logickou vrstvu</b></li>
+                        <ul>
+                            <li>Dynamické generování webových stránek (PHP, ASP.NET, JSP, ...), jež se nejčastěji zpracovávají na straně webového serveru</li>
+                        </ul>
+                    <li><b>Datovou vrstvu</b></li>
+                        <ul>
+                            <li>Mohou tvořit databáze umístěné na databázovém serveru, ale zdrojem dat mohou být také datové soubory nebo internetové služby</li>
+                        </ul>
+                </ol>
+            </div>
+            <div class="col-sm-6">
+                <h5 class="text-center">MODEL-VIEW-CONTROLLER</h5><br>
+                <p class="text-justify">Architektura moderních webových aplikací velmi často vychází z návrhového 
+                    vzoru (design pattern), označovaného zkratkou MVC (představuje první 
+                    písmena slov model, view, controller). Základní myšlenkou MVC architektury 
+                    je oddělení logiky od výstupu. Snaží se vyřešit problém tzv. "spaghetti" kódu, 
+                    typickém zejména pro starší webové aplikace psané v jazyce PHP, kdy se jako 
+                    špagety v jediném souboru proplétaly dlouhé části kódu, který řešil logické 
+                    operace a zároveň i renderování výstupu. Udržování a rozšiřování takových 
+                    aplikací je velmi náročné, obtížná je i týmová spolupráce.</p>
+            </div>
+        </div>
+        <div class="row">
+            <p style="font-size: 20px">V pojetí MVC je aplikace přehledně rozdělena na komponenty tří typů:</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="text-justify"><b id="orange">Model</b> obsahuje logiku aplikace, k níž můžeme zařadit výpočty, databázové 
+                    dotazy, validace a podobně. Jeho úkolem je podle zadaných parametrů zpracovat určitá 
+                    vstupní data a připravit z nich data výstupní. Nerozhoduje o tom, 
+                    jak bude se výstupními daty nakonec naloženo, jak budou zformátována a 
+                    vypsána; model je zcela oddělen od výstupu. V případě použití ORM (objektově-relační mapování), 
+                    korespondují modely přímo s databázovými tabulkami a 
+                    představují třídy (např. kniha, autor, vypujcka), jejichž atributy se shodují s poli 
+                    daných tabulek a metody většinou provádějí požadované operace s daty.Pro 
+                    programování bez ORM můžeme využít principu manažerů. Může tak mít např. 
+                    modely UserManager či ArticleManager. Obsahují metody k výběru potřebných 
+                    údajů z databáze, např. metodu k výběru přezdívky a informací o uživateli při 
+                    vypsání jeho profilu</p>
+
+            </div>
+            <div class="col-sm-6">
+                <p class="text-justify"><b id="orange">View</b> (pohled) má na starost zobrazení výstupu dat, která mu byla předána. 
+                    Může jít o pohled v podobě výpisu dat (sestavy), ale také o pohled s 
+                    formulářem. Nejčastěji se k tvorbě pohledů používají tzv. šablonovací systémy, které 
+                    umožňují do šablony, jejíž rámec tvoří HTML stránka, vkládat do symbolických 
+                    bloků (často tvořených složenými závorkami) proměnné i různé příkazy (podmínky, cykly). 
+                    Šablony se mohou vzájemně kombinovat a doplňovat - může 
+                    např. existovat určitá výchozí šablona s layoutem stránek, kterou využívají a 
+                    doplňují další šablony. Pohledy mohou obsahovat i minimální množství logiky, 
+                    která je pro výpis nezbytná (např. kontrola, zda si uživatel vyplnil přezdívku 
+                    před jejím vypsáním nebo cyklus s komentáři, které se vypisují).</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <p class="text-justify"><b id="orange">Controller</b> zprostředkovává komunikaci mezi klientem, modelem a pohledem. 
+                    Každá entita mívá svůj vlastní controller - UserController, ArticleController atd.</p>
+                <p class="text-justify"><b id="green">Životní cyklus stránky</b> zahajuje uživatel, který zadá do prohlížeče adresu 
+                    webu a parametry: http://www.server.com/article/detail/5 <br>
+                    Požadavek zpracuje neprve router, který podle zadaných parametrů zajistí jeho 
+                    přesměrování na správný router. V tomto případě bude volán ArticleController
+                    a budou mu předány parametry view a 5. Controller na základě parametrů provede příslušné akce: zavolá model, jehož úkolem je v databázi najít článek s 
+                    id 5, a získaná data poté controller předá pohledu (view) s názvem detail. Data 
+                    jsou vložena na určené místo v šabloně a pohled je vyrenderován. </p>
+                
+            </div>
+            <div class="col-sm-6">
+                <img src="../img/mvc.png" alt="mvc" class="responsive">
+            </div>
+        </div>
+      </main>
+
+      <footer>
+          <hr>
+          <p id="center">&copy; 2021 - Tomáš Hendrych - IT4</p>
+      </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

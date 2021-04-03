@@ -1,0 +1,24 @@
+#center {
+    text-align: center;
+}
+
+#orange {
+    color: rgb(170, 119, 23);
+}
+
+#green {
+    color: rgb(67, 207, 67);
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+hr {
+    padding: 5px;
+}
+
+h5 {
+    color: rgb(42, 165, 206);
+}
